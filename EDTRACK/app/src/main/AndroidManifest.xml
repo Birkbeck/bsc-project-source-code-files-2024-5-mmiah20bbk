@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" /> <!-- agora sdk permissions -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" /> <!-- Required permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Optional permissions -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- For devices running Android 12 (API level 32) or higher and integrating Agora Video SDK version v4.1.0 or lower, you also need to add the following permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- For Android 12.0 or higher, the following permissions are also required -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <application
+        android:name=".utils.App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App.Starting"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".student.TeacherCoursesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK"/>
+        <activity
+            android:name=".register.UpdateProfile"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".payment.StripePaymentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".callsession.CallActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".chat.ChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".student.StudentDashboard"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".AddCourseActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".AddSubject"
+            android:exported="false" />
+        <activity
+            android:name=".DashBoardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".register.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EDTRACK">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".register.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".register.PhoneVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".register.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK" />
+        <activity
+            android:name=".register.RegistrationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EDTRACK"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service
+            android:name=".services.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

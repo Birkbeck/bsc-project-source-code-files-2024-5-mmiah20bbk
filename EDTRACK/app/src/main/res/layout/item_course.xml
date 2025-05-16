@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:elevation="4dp"
+    android:padding="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <ImageView
+                android:id="@+id/courseImage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/baseline_person_24"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCourseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course Name"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tvCoursePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: 000 PKR"
+                    android:textSize="14sp"
+                    android:textColor="#FF6200EE"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="6dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvCourseDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Description"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

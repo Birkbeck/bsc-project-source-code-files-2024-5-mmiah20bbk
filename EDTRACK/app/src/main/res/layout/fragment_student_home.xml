@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".student.fragment.StudentHomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            android:background="@color/button_color"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome, Student!"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/startCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:src="@drawable/baseline_videocam_24"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Course"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            >
+
+            <TextView
+                android:id="@+id/recommendedTeacherTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended Teachers"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/noRecommendedTeachersFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Recommended teachers Found"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewRecommendedTeachers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_below="@id/recommendedTeacherTv"
+                android:nestedScrollingEnabled="false" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/allTeachersTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Teachers"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/noTeachersFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Teachers Found"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAllTeachers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_below="@id/allTeachersTv"
+                android:nestedScrollingEnabled="false" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progress="100"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
